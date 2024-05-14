@@ -1,3 +1,0 @@
-node -v 版本在16以上
-npm install
-npm run dev
