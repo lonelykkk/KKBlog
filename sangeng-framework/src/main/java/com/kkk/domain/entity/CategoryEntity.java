@@ -52,7 +52,8 @@ public class CategoryEntity implements Serializable {
 	 */
 	private Long updateBy;
 	/**
-	 * 
+	 *
+	 *
 	 */
 	private Date updateTime;
 	/**

@@ -4,7 +4,6 @@ import com.kkk.domain.entity.LinkEntity;
 import com.kkk.mapper.LinkDao;
 import com.kkk.service.LinkService;
 import org.springframework.stereotype.Service;
-import java.util.Map;
 
 
 @Service("linkService")

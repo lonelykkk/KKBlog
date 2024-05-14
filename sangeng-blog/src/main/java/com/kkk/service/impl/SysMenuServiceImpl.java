@@ -4,7 +4,6 @@ import com.kkk.domain.entity.SysMenuEntity;
 import com.kkk.mapper.SysMenuDao;
 import com.kkk.service.SysMenuService;
 import org.springframework.stereotype.Service;
-import java.util.Map;
 
 
 @Service("sysMenuService")

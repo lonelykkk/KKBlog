@@ -1,4 +1,4 @@
-package com.kkk.exception;
+package com.kkk.handler.exception;
 
 import com.kkk.common.enums.AppHttpCodeEnum;
 

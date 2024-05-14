@@ -1,0 +1,917 @@
+Index: sangeng-framework/src/main/java/com/kkk/mapper/ArticleDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/mapper/ArticleDao.java b/sangeng-framework/src/main/java/com/kkk/mapper/ArticleDao.java
+--- a/sangeng-framework/src/main/java/com/kkk/mapper/ArticleDao.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/mapper/ArticleDao.java	(date 1715398274742)
+@@ -1,0 +1,16 @@
++package com.kkk.mapper;
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import com.kkk.domain.entity.ArticleEntity;
++import org.apache.ibatis.annotations.Mapper;
++
++/**
++ * 文章表
++ * 
++ * @author lonelykkk
++ * @email 2765314967@qq.com
++ * @date 2024-05-11 11:18:37
++ */
++@Mapper
++public interface ArticleDao extends BaseMapper<ArticleEntity> {
++	
++}
+Index: sangeng-framework/src/main/java/com/kkk/service/TagService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kkk.service;\r\n\r\nimport com.baomidou.mybatisplus.extension.service.IService;\r\nimport com.kkk.domain.entity.TagEntity;\r\n\r\nimport java.util.Map;\r\n\r\n/**\r\n * 标签\r\n *\r\n * @author lonelykkk\r\n * @email 2765314967@qq.com\r\n * @date 2024-05-11 09:06:25\r\n */\r\npublic interface TagService extends IService<TagEntity> {\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/service/TagService.java b/sangeng-framework/src/main/java/com/kkk/service/TagService.java
+--- a/sangeng-framework/src/main/java/com/kkk/service/TagService.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/service/TagService.java	(date 1715396649381)
+@@ -3,14 +3,13 @@
+ import com.baomidou.mybatisplus.extension.service.IService;
+ import com.kkk.domain.entity.TagEntity;
+ 
+-import java.util.Map;
+ 
+ /**
+  * 标签
+  *
+  * @author lonelykkk
+- * @email 2765314967@qq.com
+- * @date 2024-05-11 09:06:25
++ * &#064;email  2765314967@qq.com
++ * &#064;date  2024-05-11 09:06:25
+  */
+ public interface TagService extends IService<TagEntity> {
+ 
+Index: sangeng-framework/src/main/java/com/kkk/common/enums/AppHttpCodeEnum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/common/enums/AppHttpCodeEnum.java b/sangeng-framework/src/main/java/com/kkk/common/enums/AppHttpCodeEnum.java
+--- a/sangeng-framework/src/main/java/com/kkk/common/enums/AppHttpCodeEnum.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/common/enums/AppHttpCodeEnum.java	(date 1715430360445)
+@@ -1,0 +1,29 @@
++package com.kkk.common.enums;
++
++public enum AppHttpCodeEnum {
++    // 成功
++    SUCCESS(200,"操作成功"),
++    // 登录
++    NEED_LOGIN(401,"需要登录后操作"),
++    NO_OPERATOR_AUTH(403,"无权限操作"),
++    SYSTEM_ERROR(500,"出现错误"),
++    USERNAME_EXIST(501,"用户名已存在"),
++     PHONENUMBER_EXIST(502,"手机号已存在"), EMAIL_EXIST(503, "邮箱已存在"),
++    REQUIRE_USERNAME(504, "必需填写用户名"),
++    LOGIN_ERROR(505,"用户名或密码错误");
++    int code;
++    String msg;
++
++    AppHttpCodeEnum(int code, String errorMessage){
++        this.code = code;
++        this.msg = errorMessage;
++    }
++
++    public int getCode() {
++        return code;
++    }
++
++    public String getMsg() {
++        return msg;
++    }
++}
+Index: sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com\\kkk\\Main.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1715429434538)
+@@ -1,1 +1,45 @@
++com\kkk\domain\entity\SysRoleEntity.class
++com\kkk\domain\entity\LinkEntity.class
++com\kkk\service\impl\ArticleServiceImpl.class
++com\kkk\service\SysUserService.class
++com\kkk\service\CommentService.class
++com\kkk\domain\entity\ArticleTagEntity.class
++com\kkk\service\impl\CategoryServiceImpl.class
++com\kkk\service\TagService.class
++com\kkk\domain\entity\TagEntity.class
++com\kkk\service\impl\TagServiceImpl.class
++com\kkk\domain\entity\SysRoleMenuEntity.class
++com\kkk\domain\entity\SysUserRoleEntity.class
++com\kkk\domain\entity\ArticleEntity.class
++com\kkk\mapper\LinkDao.class
++com\kkk\mapper\TagDao.class
++com\kkk\service\ArticleService.class
++com\kkk\service\SysRoleMenuService.class
++com\kkk\domain\entity\CommentEntity.class
++com\kkk\service\impl\SysRoleMenuServiceImpl.class
++com\kkk\service\LinkService.class
++com\kkk\mapper\CategoryDao.class
++com\kkk\service\ArticleTagService.class
++com\kkk\service\impl\SysRoleServiceImpl.class
++com\kkk\mapper\ArticleTagDao.class
++com\kkk\service\SysRoleService.class
++com\kkk\mapper\SysRoleMenuDao.class
++com\kkk\mapper\SysUserDao.class
++com\kkk\mapper\SysRoleDao.class
++com\kkk\mapper\ArticleDao.class
++com\kkk\mapper\SysUserRoleDao.class
++com\kkk\domain\entity\CategoryEntity.class
++com\kkk\service\SysMenuService.class
++com\kkk\domain\entity\SysUserEntity.class
++com\kkk\service\impl\LinkServiceImpl.class
++com\kkk\domain\entity\SysMenuEntity.class
++com\kkk\service\impl\CommentServiceImpl.class
++com\kkk\service\impl\ArticleTagServiceImpl.class
++com\kkk\service\SysUserRoleService.class
+ com\kkk\Main.class
++com\kkk\service\CategoryService.class
++com\kkk\service\impl\SysUserRoleServiceImpl.class
++com\kkk\mapper\CommentDao.class
++com\kkk\mapper\SysMenuDao.class
++com\kkk\service\impl\SysMenuServiceImpl.class
++com\kkk\service\impl\SysUserServiceImpl.class
+Index: sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>com\\kkk\\Main.class\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+--- a/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1715429435359)
+@@ -1,1 +1,2 @@
+-com\kkk\Main.class
++com\kkk\controller\ArticleController.class
++com\kkk\KKBlogApplication.class
+Index: sangeng-blog/target/maven-archiver/pom.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Generated by Maven\r\n#Sat May 11 07:49:59 GMT+08:00 2024\r\nversion=1.0-SNAPSHOT\r\ngroupId=com.kkk\r\nartifactId=sangeng-blog\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/sangeng-blog/target/maven-archiver/pom.properties b/sangeng-blog/target/maven-archiver/pom.properties
+--- a/sangeng-blog/target/maven-archiver/pom.properties	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-blog/target/maven-archiver/pom.properties	(date 1715429435366)
+@@ -1,5 +1,5 @@
+ #Generated by Maven
+-#Sat May 11 07:49:59 GMT+08:00 2024
++#Sat May 11 20:10:35 GMT+08:00 2024
+ version=1.0-SNAPSHOT
+ groupId=com.kkk
+ artifactId=sangeng-blog
+Index: sangeng-framework/target/maven-archiver/pom.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Generated by Maven\r\n#Sat May 11 07:49:58 GMT+08:00 2024\r\nversion=1.0-SNAPSHOT\r\ngroupId=com.kkk\r\nartifactId=sangeng-framework\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/sangeng-framework/target/maven-archiver/pom.properties b/sangeng-framework/target/maven-archiver/pom.properties
+--- a/sangeng-framework/target/maven-archiver/pom.properties	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/target/maven-archiver/pom.properties	(date 1715429434685)
+@@ -1,5 +1,5 @@
+ #Generated by Maven
+-#Sat May 11 07:49:58 GMT+08:00 2024
++#Sat May 11 20:10:34 GMT+08:00 2024
+ version=1.0-SNAPSHOT
+ groupId=com.kkk
+ artifactId=sangeng-framework
+Index: sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>E:\\tianjixuetang\\tjxt-main\\tjxt-main\\KKBlog\\sangeng-framework\\src\\main\\java\\com\\kkk\\Main.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1715429434538)
+@@ -1,1 +1,45 @@
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\LinkDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\SysMenuDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\TagDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\TagEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\SysUserDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\ArticleTagService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\LinkService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\SysRoleMenuEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\LinkEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\SysUserRoleDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\SysRoleService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\TagService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\CategoryService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\SysUserRoleService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\ArticleServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\CommentServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\CategoryEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\CommentDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\SysMenuServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\ArticleService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\ArticleTagServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\CategoryServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\SysMenuService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\SysUserRoleServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\SysMenuEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\SysUserEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\SysRoleMenuServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\SysRoleServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\SysRoleMenuService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\LinkServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\TagServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\SysRoleEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\CommentService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl\SysUserServiceImpl.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\ArticleEntity.java
+ E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\Main.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\ArticleDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\SysRoleDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\ArticleTagEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\CategoryDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\SysUserService.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\SysRoleMenuDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\CommentEntity.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper\ArticleTagDao.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity\SysUserRoleEntity.java
+Index: sangeng-framework/src/main/java/com/kkk/common/utils/PageUtils.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/common/utils/PageUtils.java b/sangeng-framework/src/main/java/com/kkk/common/utils/PageUtils.java
+--- a/sangeng-framework/src/main/java/com/kkk/common/utils/PageUtils.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/common/utils/PageUtils.java	(date 1715430206107)
+@@ -1,0 +1,110 @@
++/**
++ * Copyright (c) 2016-2019 人人开源 All rights reserved.
++ *
++ * https://www.renren.io
++ *
++ * 版权所有，侵权必究！
++ */
++
++package com.kkk.common.utils;
++
++import com.baomidou.mybatisplus.core.metadata.IPage;
++
++import java.io.Serializable;
++import java.util.List;
++
++/**
++ * 分页工具类
++ *
++ * @author Mark sunlightcs@gmail.com
++ */
++public class PageUtils implements Serializable {
++	private static final long serialVersionUID = 1L;
++	/**
++	 * 总记录数
++	 */
++	private int totalCount;
++	/**
++	 * 每页记录数
++	 */
++	private int pageSize;
++	/**
++	 * 总页数
++	 */
++	private int totalPage;
++	/**
++	 * 当前页数
++	 */
++	private int currPage;
++	/**
++	 * 列表数据
++	 */
++	private List<?> list;
++	
++	/**
++	 * 分页
++	 * @param list        列表数据
++	 * @param totalCount  总记录数
++	 * @param pageSize    每页记录数
++	 * @param currPage    当前页数
++	 */
++	public PageUtils(List<?> list, int totalCount, int pageSize, int currPage) {
++		this.list = list;
++		this.totalCount = totalCount;
++		this.pageSize = pageSize;
++		this.currPage = currPage;
++		this.totalPage = (int)Math.ceil((double)totalCount/pageSize);
++	}
++
++	/**
++	 * 分页
++	 */
++	public PageUtils(IPage<?> page) {
++		this.list = page.getRecords();
++		this.totalCount = (int)page.getTotal();
++		this.pageSize = (int)page.getSize();
++		this.currPage = (int)page.getCurrent();
++		this.totalPage = (int)page.getPages();
++	}
++
++	public int getTotalCount() {
++		return totalCount;
++	}
++
++	public void setTotalCount(int totalCount) {
++		this.totalCount = totalCount;
++	}
++
++	public int getPageSize() {
++		return pageSize;
++	}
++
++	public void setPageSize(int pageSize) {
++		this.pageSize = pageSize;
++	}
++
++	public int getTotalPage() {
++		return totalPage;
++	}
++
++	public void setTotalPage(int totalPage) {
++		this.totalPage = totalPage;
++	}
++
++	public int getCurrPage() {
++		return currPage;
++	}
++
++	public void setCurrPage(int currPage) {
++		this.currPage = currPage;
++	}
++
++	public List<?> getList() {
++		return list;
++	}
++
++	public void setList(List<?> list) {
++		this.list = list;
++	}
++	
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f50cf833-d35f-4de9-82e2-53e20b4a154c\" name=\"更改\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"D:/Maven/apache-maven-3.6.1-bin/apache-maven-3.6.1\" />\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\Maven\\apache-maven-3.6.1-bin\\apache-maven-3.6.1\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2gGlOh7VZGuqZdd83gGVexlzXYu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"jdk.selected.JAVA_MODULE\": \"1.8\",\r\n    \"last_opened_file_path\": \"E:/tianjixuetang/tjxt-main/tjxt-main/KKBlog\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"项目\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"org.jetbrains.plugins.github.ui.GithubSettingsConfigurable\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"GitStage.ChangesTree.GroupingKeys\": [\r\n      \"directory\",\r\n      \"module\",\r\n      \"repository\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\tianjixuetang\\tjxt-main\\tjxt-main\\KKBlog\\sangeng-framework\\src\\main\\java\\com\\kkk\" />\r\n      <recent name=\"E:\\tianjixuetang\\tjxt-main\\tjxt-main\\KKBlog\\sangeng-framework\\src\\main\\java\\com\\kkk\\mapper\" />\r\n      <recent name=\"E:\\tianjixuetang\\tjxt-main\\tjxt-main\\KKBlog\\sangeng-framework\\src\\main\\java\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"KKBlogApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sangeng-blog\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.kkk.KKBlogApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.kkk.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.KKBlogApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"f50cf833-d35f-4de9-82e2-53e20b4a154c\" name=\"更改\" comment=\"\" />\r\n      <created>1715331769582</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715331769582</updated>\r\n      <workItem from=\"1715331771003\" duration=\"12343000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/.idea/workspace.xml	(date 1715432263085)
+@@ -13,6 +13,13 @@
+   <component name="ComposerSettings">
+     <execution />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+@@ -48,13 +55,13 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "jdk.selected.JAVA_MODULE": "1.8",
+-    "last_opened_file_path": "E:/tianjixuetang/tjxt-main/tjxt-main/KKBlog",
++    "last_opened_file_path": "E:/tianjixuetang/tjxt-main/tjxt-main/KKBlog/sangeng-framework/src/main/java/com/kkk",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "项目",
+-    "project.structure.proportion": "0.0",
++    "project.structure.last.edited": "模块",
++    "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.0",
+     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+     "vue.rearranger.settings.migration": "true"
+@@ -67,11 +74,16 @@
+     ]
+   }
+ }]]></component>
++  <component name="ReactorSettings">
++    <option name="notificationShown" value="true" />
++  </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk" />
++      <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service\impl" />
++      <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\service" />
+       <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\mapper" />
+-      <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java" />
++      <recent name="E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-framework\src\main\java\com\kkk\domain\entity" />
+     </key>
+   </component>
+   <component name="RunManager">
+@@ -102,8 +114,16 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1715331769582</updated>
+-      <workItem from="1715331771003" duration="12343000" />
++      <workItem from="1715331771003" duration="18301000" />
++    </task>
++    <task id="LOCAL-00001" summary="KKBlog项目初始化">
++      <created>1715396663810</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1715396663810</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -114,11 +134,27 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="master" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="KKBlog项目初始化" />
++    <option name="LAST_COMMIT_MESSAGE" value="KKBlog项目初始化" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: sangeng-framework/src/main/java/com/kkk/config/WebConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/config/WebConfig.java b/sangeng-framework/src/main/java/com/kkk/config/WebConfig.java
+--- a/sangeng-framework/src/main/java/com/kkk/config/WebConfig.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/config/WebConfig.java	(date 1715431948840)
+@@ -1,0 +1,26 @@
++package com.kkk.config;
++
++import org.springframework.context.annotation.Configuration;
++import org.springframework.web.servlet.config.annotation.CorsRegistry;
++import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
++
++@Configuration
++public class WebConfig implements WebMvcConfigurer {
++
++    @Override
++    public void addCorsMappings(CorsRegistry registry) {
++      // 设置允许跨域的路径
++        registry.addMapping("/**")
++                // 设置允许跨域请求的域名
++                .allowedOriginPatterns("*")
++                // 是否允许cookie
++                .allowCredentials(true)
++                // 设置允许的请求方式
++                .allowedMethods("GET", "POST", "DELETE", "PUT")
++                // 设置允许的header属性
++                .allowedHeaders("*")
++                // 跨域允许时间
++                .maxAge(3600);
++    }
++
++}
+\ No newline at end of file
+Index: sangeng-framework/src/main/java/com/kkk/domain/entity/ArticleEntity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/domain/entity/ArticleEntity.java b/sangeng-framework/src/main/java/com/kkk/domain/entity/ArticleEntity.java
+--- a/sangeng-framework/src/main/java/com/kkk/domain/entity/ArticleEntity.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/domain/entity/ArticleEntity.java	(date 1715398153694)
+@@ -1,0 +1,83 @@
++package com.kkk.domain.entity;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++
++import java.io.Serializable;
++import java.util.Date;
++import lombok.Data;
++
++/**
++ * 文章表
++ * 
++ * @author lonelykkk
++ * @email 2765314967@qq.com
++ * @date 2024-05-11 11:18:37
++ */
++@Data
++@TableName("sg_article")
++public class ArticleEntity implements Serializable {
++	private static final long serialVersionUID = 1L;
++
++	/**
++	 * 
++	 */
++	@TableId
++	private Long id;
++	/**
++	 * 标题
++	 */
++	private String title;
++	/**
++	 * 文章内容
++	 */
++	private String content;
++	/**
++	 * 文章摘要
++	 */
++	private String summary;
++	/**
++	 * 所属分类id
++	 */
++	private Long categoryId;
++	/**
++	 * 缩略图
++	 */
++	private String thumbnail;
++	/**
++	 * 是否置顶（0否，1是）
++	 */
++	private String isTop;
++	/**
++	 * 状态（0已发布，1草稿）
++	 */
++	private String status;
++	/**
++	 * 访问量
++	 */
++	private Long viewCount;
++	/**
++	 * 是否允许评论 1是，0否
++	 */
++	private String isComment;
++	/**
++	 * 
++	 */
++	private Long createBy;
++	/**
++	 * 
++	 */
++	private Date createTime;
++	/**
++	 * 
++	 */
++	private Long updateBy;
++	/**
++	 * 
++	 */
++	private Date updateTime;
++	/**
++	 * 删除标志（0代表未删除，1代表已删除）
++	 */
++	private Integer delFlag;
++
++}
+Index: sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>E:\\tianjixuetang\\tjxt-main\\tjxt-main\\KKBlog\\sangeng-blog\\src\\main\\java\\com\\kkk\\Main.java\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+--- a/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-blog/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1715429435360)
+@@ -1,1 +1,2 @@
+-E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-blog\src\main\java\com\kkk\Main.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-blog\src\main\java\com\kkk\KKBlogApplication.java
++E:\tianjixuetang\tjxt-main\tjxt-main\KKBlog\sangeng-blog\src\main\java\com\kkk\controller\ArticleController.java
+Index: sangeng-admin/target/maven-archiver/pom.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Generated by Maven\r\n#Sat May 11 07:49:59 GMT+08:00 2024\r\nversion=1.0-SNAPSHOT\r\ngroupId=com.kkk\r\nartifactId=sangeng-admin\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/sangeng-admin/target/maven-archiver/pom.properties b/sangeng-admin/target/maven-archiver/pom.properties
+--- a/sangeng-admin/target/maven-archiver/pom.properties	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-admin/target/maven-archiver/pom.properties	(date 1715429435143)
+@@ -1,5 +1,5 @@
+ #Generated by Maven
+-#Sat May 11 07:49:59 GMT+08:00 2024
++#Sat May 11 20:10:35 GMT+08:00 2024
+ version=1.0-SNAPSHOT
+ groupId=com.kkk
+ artifactId=sangeng-admin
+Index: sangeng-framework/src/main/java/com/kkk/common/utils/Constant.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/common/utils/Constant.java b/sangeng-framework/src/main/java/com/kkk/common/utils/Constant.java
+--- a/sangeng-framework/src/main/java/com/kkk/common/utils/Constant.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/common/utils/Constant.java	(date 1715430206083)
+@@ -1,0 +1,127 @@
++/**
++ * Copyright (c) 2016-2019 人人开源 All rights reserved.
++ *
++ * https://www.renren.io
++ *
++ * 版权所有，侵权必究！
++ */
++
++package com.kkk.common.utils;
++
++/**
++ * 常量
++ *
++ * @author Mark sunlightcs@gmail.com
++ */
++public class Constant {
++	/** 超级管理员ID */
++	public static final int SUPER_ADMIN = 1;
++    /**
++     * 当前页码
++     */
++    public static final String PAGE = "page";
++    /**
++     * 每页显示记录数
++     */
++    public static final String LIMIT = "limit";
++    /**
++     * 排序字段
++     */
++    public static final String ORDER_FIELD = "sidx";
++    /**
++     * 排序方式
++     */
++    public static final String ORDER = "order";
++    /**
++     *  升序
++     */
++    public static final String ASC = "asc";
++	/**
++	 * 菜单类型
++	 * 
++	 * @author chenshun
++	 * @email sunlightcs@gmail.com
++	 * @date 2016年11月15日 下午1:24:29
++	 */
++    public enum MenuType {
++        /**
++         * 目录
++         */
++    	CATALOG(0),
++        /**
++         * 菜单
++         */
++        MENU(1),
++        /**
++         * 按钮
++         */
++        BUTTON(2);
++
++        private int value;
++
++        MenuType(int value) {
++            this.value = value;
++        }
++
++        public int getValue() {
++            return value;
++        }
++    }
++    
++    /**
++     * 定时任务状态
++     * 
++     * @author chenshun
++     * @email sunlightcs@gmail.com
++     * @date 2016年12月3日 上午12:07:22
++     */
++    public enum ScheduleStatus {
++        /**
++         * 正常
++         */
++    	NORMAL(0),
++        /**
++         * 暂停
++         */
++    	PAUSE(1);
++
++        private int value;
++
++        ScheduleStatus(int value) {
++            this.value = value;
++        }
++        
++        public int getValue() {
++            return value;
++        }
++    }
++
++    /**
++     * 云服务商
++     */
++    public enum CloudService {
++        /**
++         * 七牛云
++         */
++        QINIU(1),
++        /**
++         * 阿里云
++         */
++        ALIYUN(2),
++        /**
++         * 腾讯云
++         */
++        QCLOUD(3);
++
++        private int value;
++
++        CloudService(int value) {
++            this.value = value;
++        }
++
++        public int getValue() {
++            return value;
++        }
++    }
++
++}
+Index: sangeng-blog/src/main/java/com/kkk/controller/ArticleController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-blog/src/main/java/com/kkk/controller/ArticleController.java b/sangeng-blog/src/main/java/com/kkk/controller/ArticleController.java
+--- a/sangeng-blog/src/main/java/com/kkk/controller/ArticleController.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-blog/src/main/java/com/kkk/controller/ArticleController.java	(date 1715432354495)
+@@ -1,0 +1,43 @@
++package com.kkk.controller;
++
++import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
++import com.kkk.common.utils.Result;
++import com.kkk.domain.entity.ArticleEntity;
++import com.kkk.service.ArticleService;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++import java.util.List;
++
++/**
++ * @author lonelykkk
++ * @email 2765314967@qq.com
++ * @date 2024/5/11 11:10
++ * @Version V1.0
++ */
++
++@RestController
++@RequestMapping("/article")
++public class ArticleController {
++
++    @Autowired
++    private ArticleService articleService;
++
++    @GetMapping("/ArticleList")
++    public Result<ArticleEntity> list() {
++        List<ArticleEntity> list = articleService.list();
++        return Result.okResult(list);
++    }
++
++    /**
++     * 查询热门文章
++     * @return
++     */
++    @GetMapping("/hotArticleList")
++    public Result<ArticleEntity> hotArticleList() {
++        List<ArticleEntity> hotArticleList = articleService.hotArticleList();
++        return Result.okResult(hotArticleList);
++    }
++}
+Index: sangeng-framework/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <parent>\r\n        <artifactId>KKBlog</artifactId>\r\n        <groupId>com.kkk</groupId>\r\n        <version>1.0-SNAPSHOT</version>\r\n    </parent>\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <artifactId>sangeng-framework</artifactId>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n        <!--lombk-->\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n        <!--junit-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-test</artifactId>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <!--SpringSecurity启动器-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-security</artifactId>\r\n        </dependency>\r\n        <!--redis依赖-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-data-redis</artifactId>\r\n        </dependency>\r\n        <!--fastjson依赖-->\r\n        <dependency>\r\n            <groupId>com.alibaba</groupId>\r\n            <artifactId>fastjson</artifactId>\r\n        </dependency>\r\n        <!--jwt依赖-->\r\n        <dependency>\r\n            <groupId>io.jsonwebtoken</groupId>\r\n            <artifactId>jjwt</artifactId>\r\n        </dependency>\r\n        <!--mybatisPlus依赖-->\r\n        <dependency>\r\n            <groupId>com.baomidou</groupId>\r\n            <artifactId>mybatis-plus-boot-starter</artifactId>\r\n        </dependency>\r\n        <!--mysql数据库驱动-->\r\n        <dependency>\r\n            <groupId>mysql</groupId>\r\n            <artifactId>mysql-connector-java</artifactId>\r\n        </dependency>\r\n\r\n        <!--阿里云OSS-->\r\n        <dependency>\r\n            <groupId>com.aliyun.oss</groupId>\r\n            <artifactId>aliyun-sdk-oss</artifactId>\r\n        </dependency>\r\n\r\n        <!--AOP-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-aop</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>com.alibaba</groupId>\r\n            <artifactId>easyexcel</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.springfox</groupId>\r\n            <artifactId>springfox-swagger2</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>io.springfox</groupId>\r\n            <artifactId>springfox-swagger-ui</artifactId>\r\n        </dependency>\r\n\r\n    </dependencies>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/pom.xml b/sangeng-framework/pom.xml
+--- a/sangeng-framework/pom.xml	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/pom.xml	(date 1715429279963)
+@@ -29,10 +29,10 @@
+             <scope>test</scope>
+         </dependency>
+         <!--SpringSecurity启动器-->
+-        <dependency>
++       <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-security</artifactId>
+-        </dependency>
++        </dependency>-->
+         <!--redis依赖-->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+Index: sangeng-framework/src/main/java/com/kkk/common/exception/RRException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sangeng-framework/src/main/java/com/kkk/common/exception/RRException.java b/sangeng-framework/src/main/java/com/kkk/common/exception/RRException.java
+--- a/sangeng-framework/src/main/java/com/kkk/common/exception/RRException.java	(revision 0e43f64d92ff6ef382c84a7986c2340d93376113)
++++ b/sangeng-framework/src/main/java/com/kkk/common/exception/RRException.java	(date 1715430206100)
+@@ -1,0 +1,61 @@
++/**
++ * Copyright (c) 2016-2019 人人开源 All rights reserved.
++ *
++ * https://www.renren.io
++ *
++ * 版权所有，侵权必究！
++ */
++
++package com.kkk.common.exception;
++
++/**
++ * 自定义异常
++ *
++ * @author Mark sunlightcs@gmail.com
++ */
++public class RRException extends RuntimeException {
++	private static final long serialVersionUID = 1L;
++	
++    private String msg;
++    private int code = 500;
++    
++    public RRException(String msg) {
++		super(msg);
++		this.msg = msg;
++	}
++	
++	public RRException(String msg, Throwable e) {
++		super(msg, e);
++		this.msg = msg;
++	}
++	
++	public RRException(String msg, int code) {
++		super(msg);
++		this.msg = msg;
++		this.code = code;
++	}
++	
++	public RRException(String msg, int code, Throwable e) {
++		super(msg, e);
++		this.msg = msg;
++		this.code = code;
++	}
++
++	public String getMsg() {
++		return msg;
++	}
++
++	public void setMsg(String msg) {
++		this.msg = msg;
++	}
++
++	public int getCode() {
++		return code;
++	}
++
++	public void setCode(int code) {
++		this.code = code;
++	}
++	
++	
++}
+diff --git a/sangeng-framework/src/main/java/com/kkk/common/utils/ResponseResult.java b/sangeng-framework/src/main/java/com/kkk/common/utils/ResponseResult.java
+deleted file mode 100644

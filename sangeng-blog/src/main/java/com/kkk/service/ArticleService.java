@@ -1,6 +1,7 @@
 package com.kkk.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.kkk.domain.entity.ArticleEntity;
+import com.kkk.domain.vo.ArticleVo;
 import com.kkk.domain.vo.PageVo;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface ArticleService extends IService<ArticleEntity> {
     List<ArticleEntity> hotArticleList();
 
     PageVo articleList(Integer pageNum, Integer pageSize, Long categoryId);
+
+    ArticleVo getArticleDetail(Long id);
 }
 

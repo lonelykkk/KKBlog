@@ -1,0 +1,19 @@
+<changelist name="在进行更新之前于_2024_5_11_21_00_取消提交了更改" date="1715432448146" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_11_21_00_取消提交了更改/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行更新之前于 2024/5/11 21:00 取消提交了更改" />
+  <binary>
+    <option name="BEFORE_PATH" value="sangeng-blog/target/sangeng-blog-1.0-SNAPSHOT.jar" />
+    <option name="AFTER_PATH" value="sangeng-blog/target/sangeng-blog-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_11_21_00_取消提交了更改/sangeng-blog-1.0-SNAPSHOT.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="sangeng-admin/target/sangeng-admin-1.0-SNAPSHOT.jar" />
+    <option name="AFTER_PATH" value="sangeng-admin/target/sangeng-admin-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_11_21_00_取消提交了更改/sangeng-admin-1.0-SNAPSHOT.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="sangeng-framework/target/sangeng-framework-1.0-SNAPSHOT.jar" />
+    <option name="AFTER_PATH" value="sangeng-framework/target/sangeng-framework-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_5_11_21_00_取消提交了更改/sangeng-framework-1.0-SNAPSHOT.jar" />
+  </binary>
+</changelist>

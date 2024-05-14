@@ -5,16 +5,13 @@ import com.kkk.domain.entity.CategoryEntity;
 import com.kkk.mapper.CategoryDao;
 import com.kkk.service.ArticleService;
 import com.kkk.service.CategoryService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 
 @Service("categoryService")
-@Slf4j
 public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity> implements CategoryService {
 
     @Autowired

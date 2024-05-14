@@ -2,8 +2,7 @@ package com.kkk.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.kkk.domain.entity.CommentEntity;
-
-import java.util.Map;
+import com.kkk.domain.vo.PageVo;
 
 /**
  * 评论表
@@ -13,5 +12,6 @@ import java.util.Map;
  * @date 2024-05-11 09:06:25
  */
 public interface CommentService extends IService<CommentEntity> {
+    PageVo commentList(Long articleId, Integer pageNum, Integer pageSize);
 }
 

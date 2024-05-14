@@ -5,7 +5,6 @@ import com.kkk.domain.entity.SysRoleMenuEntity;
 import com.kkk.mapper.SysRoleMenuDao;
 import com.kkk.service.SysRoleMenuService;
 import org.springframework.stereotype.Service;
-import java.util.Map;
 
 
 @Service("sysRoleMenuService")

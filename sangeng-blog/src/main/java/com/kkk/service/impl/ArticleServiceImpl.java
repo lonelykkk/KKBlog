@@ -8,6 +8,7 @@ import com.kkk.domain.dto.HotArticleDto;
 import com.kkk.domain.entity.ArticleEntity;
 import com.kkk.domain.entity.CategoryEntity;
 import com.kkk.domain.vo.ArticleListVo;
+import com.kkk.domain.vo.ArticleVo;
 import com.kkk.domain.vo.PageVo;
 import com.kkk.mapper.ArticleDao;
 import com.kkk.service.ArticleService;
@@ -89,5 +90,26 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleDao, ArticleEntity> i
 
         final PageVo pageVo = new PageVo(articleListVos, pageArticle.getTotal());
         return pageVo;
+    }
+
+    /**
+     * 查看文章详情
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public ArticleVo getArticleDetail(Long id) {
+        final ArticleEntity article = getById(id);
+        //查询分类名称
+        final CategoryEntity category = categoryService.getById(article.getCategoryId());
+        //写入分类名称
+        if (category.getName() != null) {
+            article.setCategoryName(category.getName());
+        }
+        //属性拷贝
+        final ArticleVo articleVo = BeanCopyUtils.copyBean(article, ArticleVo.class);
+
+        return articleVo;
     }
 }
