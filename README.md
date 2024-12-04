@@ -1,4 +1,5 @@
 # kkblog
+基于springboot+vue的个人博客系统
 ## 客户端演示链接
 [kkblog客户端演示链接](http://106.53.179.195:8080/#/)
 账号：kkk
